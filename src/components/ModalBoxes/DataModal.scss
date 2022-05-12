@@ -1,0 +1,123 @@
+.modal-component {
+  & .ant-modal-content {
+    border-radius: 12px !important;
+    & .ant-modal-header {
+      border-top-left-radius: 12px;
+      border-top-right-radius: 12px;
+    }
+    & .ant-modal-body {
+      height: 100%;
+      padding: 38px;
+      & .modal-cantainer {
+        & .modal-title-container {
+          font-weight: 600;
+        }
+        & .modal-containter-text {
+          color: black;
+        }
+        & .modal-button {
+          width: 94px;
+          height: 28px;
+          margin-top: 0px;
+          background-color: #3582c5;
+          border: none;
+          box-sizing: border-box;
+          border-radius: 7px;
+          /* font-weight: bold; */
+          font-size: 11px;
+          line-height: 23px;
+          text-align: center;
+          letter-spacing: 0.05em;
+          color: white;
+        }
+
+        & .licence-form {
+          width: auto !important;
+          & .form-submit-button {
+            width: 204px;
+            height: 48px;
+            background-color: #ffffff;
+            border: 2px solid #3582c5;
+            box-sizing: border-box;
+            border-radius: 12px;
+            font-weight: bold;
+            font-size: 18px;
+            line-height: 23px;
+            text-align: center;
+            letter-spacing: 0.05em;
+            color: #3582c5;
+            display: block;
+            margin: 0 auto !important;
+            &.active {
+              background-color: #3582c5;
+              color: #ffffff;
+            }
+          }
+          .spin-loading {
+            line-height: 23px;
+            display: block;
+            margin: 0 auto;
+          }
+        }
+      }
+      & .report-single-tab {
+        padding: 10px 15px 0px;
+        & .ant-row {
+          & .ant-col {
+            text-align: center;
+            & .validation-headers {
+              display: flex;
+              margin-bottom: 10px;
+              font-size: 18px;
+            }
+
+            & p {
+              font-size: 10px;
+              color: black;
+            }
+            & .status-label {
+              text-align: center;
+              border-radius: 3px;
+              color: white;
+              width: 50px;
+              margin: 0 auto;
+              &.fail {
+                background-color: red;
+              }
+              &.warning {
+                background-color: #f8ac4f;
+              }
+            }
+            & .table-single-item {
+              padding: 0px;
+              border-bottom: none;
+              border-top: 1px solid #f0f0f0;
+              & p {
+                margin-bottom: 3px;
+                margin-top: 3px;
+              }
+              & .warning-tags {
+                display: flex;
+              }
+            }
+            & .ant-table-row {
+              border-bottom: none;
+            }
+            & .report-tab {
+              height: 18px;
+              border-top: 1px solid #c4c4c4;
+              & .ant-col {
+                margin-bottom: 0px;
+                margin-top: 1px;
+                & .title-content {
+                  font-weight: bold;
+                  display: flex;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,57 @@
+.welcome-page-container {
+  & .logo {
+    margin-left: 40px;
+    margin-top: 40px;
+  }
+  & .card-component-welcome-page {
+    margin: 0px 40px 40px;
+    padding: 0px 0px;
+    border-radius: 15px !important;
+
+    & .details-warp {
+      // background-image: url("../../assets/images/common/login-wrapper-02.png");
+
+      height: 100vh;
+
+      // background-color: white;
+      // vertical-align: center;
+      & .wrapper-img {
+        width: 100%;
+        height: calc(100vh - 130px);
+        border-radius: 0px 15px 15px 0px;
+      }
+    }
+    & .left-warp {
+      border-radius: 15px 0px 0px 15px;
+      background-color: white;
+      vertical-align: top;
+      padding: 45px 60px 0px 60px;
+      height: calc(100vh - 130px);
+
+      & .paragraph-content {
+        margin-top: 200px;
+        justify-content: center;
+
+        font-weight: 800;
+        font-size: 30px;
+        line-height: 40px;
+      }
+      & .welcome-button {
+        width: 150px;
+        height: 48px;
+        margin-top: 25px;
+        // margin-right:20px;
+        background-color: #397acf;
+        border: none;
+        box-sizing: border-box;
+        border-radius: 12px;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 23px;
+        text-align: center;
+        letter-spacing: 0.05em;
+        color: white;
+      }
+    }
+  }
+}

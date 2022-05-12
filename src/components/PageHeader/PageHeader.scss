@@ -1,0 +1,15 @@
+.page-header {
+  display: inline-block;
+  margin: 10px 0px 5px 0px;
+  font-size: 18px;
+  width: 100%;
+  & h3 {
+    display: inline-block;
+  }
+  & .create-button-container {
+    float: right;
+    button {
+      padding: 4px 15px 4px 5px;
+    }
+  }
+}

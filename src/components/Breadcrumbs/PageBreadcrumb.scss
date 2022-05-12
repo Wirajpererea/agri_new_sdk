@@ -1,0 +1,18 @@
+.breadcrumb-container {
+  & span {
+    & .breadcrumb-item {
+      & .home-icon {
+        & svg {
+          font-size: 14px;
+        }
+      }
+      & .pageName {
+        font-size: 13px;
+      }
+    }
+
+    & .ant-breadcrumb-separator {
+      font-size: 14px;
+    }
+  }
+}

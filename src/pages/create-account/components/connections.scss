@@ -1,0 +1,100 @@
+.container-wrapper {
+  .title {
+    margin-top: 30px;
+    margin-bottom: 25px;
+
+    font-style: normal;
+    font-weight: 800;
+    font-size: 30px;
+    line-height: 30px;
+  }
+  & .paragraph-content {
+    color: black;
+  }
+  .connection-form {
+    width: 100%;
+    margin-bottom: 8px;
+    & .row-column {
+      margin: 0px 20px;
+      & .connection-input-item {
+        margin-bottom: 8px;
+        & .ant-form-item-label {
+          padding-bottom: 0px;
+          & label {
+            color: #777b90;
+
+            font-weight: 600;
+            font-size: 12px;
+          }
+        }
+
+        & .connection-input {
+          border-radius: 10px;
+          border: 1px solid black;
+          height: 40px;
+          width: 300px;
+        }
+      }
+      & .connection-input-label {
+        color: black;
+      }
+      & .connection-status-item {
+        padding: 10px 11px;
+        border-radius: 10px;
+        border: 1px solid #e5e5e5;
+        height: 40px;
+        margin-bottom: 24px;
+        // width: 300px;
+        & .connection-status-result {
+          margin: auto;
+        }
+      }
+    }
+
+    & .form-button-test,
+    .form-button-test:hover {
+      width: 300px;
+      height: 48px;
+      margin-top: 45px;
+      background-color: #c4c4c4;
+      // border: 2px solid #3582c5;
+      border: none;
+      box-sizing: border-box;
+      border-radius: 12px;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 23px;
+      text-align: center;
+      letter-spacing: 0.05em;
+      color: white;
+
+      &.active {
+        background-color: #3582c5;
+        color: #ffffff;
+      }
+    }
+
+    // & .form-button-save,
+    // .form-button-save:hover {
+    //   width: 150px;
+    //   height: 48px;
+    //   margin-top: 0px;
+    //   background-color: #c4c4c4;
+    //   // border: 2px solid #3582c5;
+    //   border: none;
+    //   box-sizing: border-box;
+    //   border-radius: 12px;
+    //   font-weight: bold;
+    //   font-size: 14px;
+    //   line-height: 23px;
+    //   text-align: center;
+    //   letter-spacing: 0.05em;
+    //   color: white;
+
+    //   &.active {
+    //     background-color: #3582c5;
+    //     color: #ffffff;
+    //   }
+    // }
+  }
+}

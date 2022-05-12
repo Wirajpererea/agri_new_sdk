@@ -1,0 +1,135 @@
+.title {
+  margin-bottom: 40px;
+  margin-left: 23%;
+}
+.connection-form {
+  width: 300px;
+  & .connection-input-item {
+    margin-bottom: 24px;
+
+    & .connection-input {
+      border-radius: 10px;
+      border: 1px solid black;
+      height: 40px;
+      width: 300px;
+    }
+  }
+  & label {
+    color: #777b90;
+  }
+  & label::before {
+    display: none !important;
+  }
+
+  & .connection-status-item {
+    padding: 10px 11px;
+    border-radius: 10px;
+    border: 1px solid #e5e5e5;
+    height: 40px;
+    margin-bottom: 24px;
+    // width: 300px;
+    & .connection-status-result {
+      margin: auto;
+    }
+  }
+  & .form-button-test,
+  .form-button-test:hover {
+    width: 150px;
+    height: 48px;
+    margin-top: 0px;
+    background-color: #c4c4c4;
+    // border: 2px solid #3582c5;
+    border: none;
+    box-sizing: border-box;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 23px;
+    text-align: center;
+    letter-spacing: 0.05em;
+    color: white;
+
+    &.active {
+      background-color: #3582c5;
+      color: #ffffff;
+    }
+  }
+
+  & .form-button-save,
+  .form-button-save:hover {
+    width: 150px;
+    height: 48px;
+    margin-top: 0px;
+    background-color: #c4c4c4;
+    // border: 2px solid #3582c5;
+    border: none;
+    box-sizing: border-box;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 23px;
+    text-align: center;
+    letter-spacing: 0.05em;
+    color: white;
+
+    &.active {
+      background-color: #3582c5;
+      color: #ffffff;
+    }
+  }
+
+  & .connection-action-item {
+    & .message-alert {
+      width: 500px;
+      height: auto;
+      border: 1px solid #e5e5e5;
+      box-sizing: border-box;
+      border-radius: 12px;
+      margin-bottom: 24px;
+      margin: 20px auto;
+      background-color: rgba(43, 49, 74, 0.1);
+
+      & .message-icon {
+        width: 24px;
+        height: 24px;
+        margin-left: 10px;
+      }
+
+      & .message {
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 18px;
+        color: #757575;
+        display: inline-block;
+        padding: 15px 10px;
+        vertical-align: middle;
+        width: auto;
+      }
+
+      &.success-msg {
+        width: 340px;
+      }
+
+      &.error-msg {
+        width: 290px;
+      }
+
+      &.long-msg {
+        width: auto !important;
+      }
+    }
+  }
+}
+
+.connections-card {
+  & .ant-card-body {
+    padding: 30px 100px;
+  }
+}
+
+.page-section {
+  & .title {
+    margin-bottom: 40px;
+    margin-left: 0px;
+  }
+}

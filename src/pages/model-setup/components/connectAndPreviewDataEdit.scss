@@ -1,0 +1,125 @@
+.data-set {
+  margin-top: 5px;
+}
+
+.submit-btn-div-connect {
+  .form-submit-button {
+    width: 100%;
+    height: 40px;
+    margin-top: 10px;
+    background-color: #c4c4c4;
+    // border: 2px solid #3582c5;
+    border: none;
+    box-sizing: border-box;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 23px;
+    text-align: center;
+    letter-spacing: 0.05em;
+    color: white;
+
+    &.active {
+      background-color: #3582c5;
+      color: #ffffff;
+    }
+  }
+}
+
+.submit-btn-div-connect-plus {
+  .form-submit-button {
+    width: 100%;
+    height: 40px;
+    margin-top: 10px;
+    background-color: #c4c4c4;
+    // border: 2px solid #3582c5;
+    border: none;
+    box-sizing: border-box;
+    border-radius: 18px;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 23px;
+    text-align: center;
+    letter-spacing: 0.05em;
+    color: white;
+
+    &.active {
+      background-color: #3582c5;
+      color: #ffffff;
+    }
+  }
+}
+
+.action {
+  font-size: 22px;
+  margin-top: 5px;
+  color: red;
+}
+.action-disabled {
+  font-size: 22px;
+  margin-top: 5px;
+  color: #e5e5e5;
+  text-align: center;
+}
+
+.action-add {
+  font-size: 22px;
+  margin-top: 5px;
+  color: #3582c5;
+}
+
+.pipeline-list {
+  max-height: 360px;
+  height:360px;
+  overflow: auto;
+}
+
+.menu-dropdown {
+  overflow-y: scroll;
+  max-height: 250px;
+}
+
+.action-correct {
+  font-size: 22px;
+  margin-top: 5px;
+  color: #39e648;
+}
+
+.action-edit {
+  font-size: 18px;
+  margin-top: 5px;
+  color: #3582c5;
+
+}
+
+.heading-data-pipeline{
+  background-color: #fafafa;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.grid-preview-data{
+  border-bottom:1px solid  rgb(204, 204, 204);
+  align-items: center;
+}
+
+.dropdown{
+    max-width: 200px!important;
+    min-width: 200px;
+    display:table-cell;
+ // width: 150px;
+  // margin-top: 25px;
+  // margin-bottom: 10px;
+
+  @media only screen and (max-width: 1440px) {
+    max-width: 150px!important;
+    min-width: 150px;
+  }
+}
+
+.ant-select-dropdown {
+  min-width: 200px;
+  width: 350px!important;
+  left: 647px;
+  top: 397px;
+}

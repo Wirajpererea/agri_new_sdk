@@ -1,0 +1,113 @@
+.build-model-container {
+  margin-top: 80px;
+}
+
+.build-model-header {
+  // position: absolute;
+  width: 1095px;
+  height: 30px;
+  left: 297px;
+  top: 120px;
+
+  font-style: normal;
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 30px;
+  /* identical to box height, or 75% */
+
+  display: block;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.15px;
+
+  color: #2b314a;
+}
+
+.build-model-sub-header {
+  width: auto;
+  height: 29px;
+
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 30px;
+  display: inline-block;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.15px;
+  color: #2b314a;
+}
+
+.build-model-header-div {
+  text-align: center;
+  margin: 0 auto;
+  & h1 {
+    width: auto;
+  }
+}
+
+.build-model-list {
+  padding: 0 120px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center ;
+  width: 1030px;
+  margin: 0 auto 50px auto;
+  & .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    & .ant-card-body {
+      padding: 0 !important;
+      margin: 38px 0px;
+    }   
+  }
+}
+
+.build-model-tiles {
+  cursor: pointer;
+  // height: 128px;
+  width: 128px;
+  text-align: center;
+  margin: 15px !important;
+  & span {
+    font-weight: bold;
+  }
+}
+
+.build-model-tiles-active {
+  border: 1px solid blue;
+  cursor: pointer;
+  // height: 128px;
+  width: 128px;
+  text-align: center;
+  margin: 15px !important;
+  & span {
+    font-weight: bold;
+  }
+}
+
+.build-model-tiles-disabled {
+  cursor: pointer;
+  // height: 128px;
+  width: 128px;
+  text-align: center;
+  margin: 15px !important;
+  background-color: #eeeeee;
+  & span {
+    font-weight: bold;
+    color: gray;
+  }
+}
+
+.build-model-back-button {
+  height: 50px;
+  background-color: #397acf;
+  border: none;
+  border-radius: 12px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 30px;
+  bottom: 20px;
+}

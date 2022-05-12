@@ -1,0 +1,79 @@
+@font-face {
+  font-family: "Poppins";
+  font-weight: 200;
+  src: url("./assets/fonts/Poppins-Light.eot");
+  src: url("./assets/fonts/Poppins-Light.eot?#iefix")
+      format("embedded-opentype"),
+    url("./assets/fonts/Poppins-Light.woff2") format("woff2"),
+    url("./assets/fonts/Poppins-Light.woff") format("woff"),
+    url("./assets/fonts/Poppins-Light.ttf") format("truetype"),
+    url("./assets/fonts/Poppins-Light.svg#Poppins") format("svg");
+}
+body {
+  font-family: "Poppins";
+  font-style: normal;
+  
+  .main-container {
+    min-width: 1280px;
+    // overflow-x: scroll;
+    .ant-layout {
+      background-color: #2b314a;
+    }
+    & .content {
+      background-color: #e5e5e5;
+      min-height: calc(100vh - 80px);
+      margin-top: 20px;
+    }
+    & .logo {
+      margin-left: 40px;
+      margin-top: 40px;
+      width: 181.25px;
+      height: 24px;
+    }
+  }
+
+  .ant-form-item-explain {
+    display: none;
+  }
+  .ant-form-item-has-error .ant-input:hover {
+    border-color: black !important;
+  }
+
+  .ant-menu-item-selected span a {
+    color: #397acf !important;
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+  .ant-modal-wrap {
+    width: calc(100% - 250px);
+    margin-left: 250px;
+  }
+
+  .sql-editor-contianer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(43, 49, 74, 0.3);
+    border-radius: 5px;
+  }
+  .sql-table-container {
+    height: 70vh;
+  }
+
+  .sql-query-contianer {
+    height: 76vh;
+  }
+}
+$retina: "(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)";
+@media (min-width: #{$retina}) {
+  body {
+    .main-container {
+      & .content {
+        background-color: #e5e5e5;
+        min-height: calc(90vh - 5px);
+        margin-top: 20px;
+      }
+    }
+  }
+}

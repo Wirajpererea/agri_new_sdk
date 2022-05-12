@@ -1,0 +1,41 @@
+.toolbar {
+  height: 35px;
+  border-bottom: 1px solid #ccc;
+  background-color: #f4f4f4;
+  /* line-height: 30px; */
+  padding-left: 4px;
+  display: flex;
+  align-items: center;
+}
+
+.toolbarItem {
+  padding-right: 48px;
+  padding-left: 4px;
+}
+
+.iconLinkWrapper {
+  height: 30px;
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
+}
+
+.iconLink {
+  margin-left: 16px;
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
+}
+
+.runButton {
+  display: inline-block;
+  width: 50px;
+  height: 30px;
+  background-color: #397acf;
+  padding: 5px;
+  border-radius: 5px;
+  text-align: center;
+  margin: 5px;
+}
+
+

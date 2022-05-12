@@ -1,0 +1,30 @@
+.date-picker-component {
+  & .ant-picker {
+    width: 210px;
+    height: 48px;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 12px;
+    cursor: pointer;
+    & ::placeholder {
+      font-size: 18px;
+      line-height: 23px;
+      text-align: center;
+      color: #000000;
+    }
+    & .ant-picker-input {
+      & input {
+        font-size: 18px;
+        text-align: center;
+        color: black;
+      }
+
+      & .ant-picker-suffix {
+        & .anticon {
+          font-size: 20px;
+          color: black;
+        }
+      }
+    }
+  }
+}

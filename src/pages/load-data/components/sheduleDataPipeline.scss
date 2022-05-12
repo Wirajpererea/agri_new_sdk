@@ -1,0 +1,58 @@
+.connect-data-pipe {
+  font-weight: 600;
+  .schedule-switch{
+    margin-bottom: 20px;
+    .pipeline-connection-input-label{
+      margin-right: 10px;
+      padding-top: 3px;
+      
+    }
+  }
+
+  .submit-btn-div {
+    .form-submit-button {
+      width: 100%;
+      height: 40px;
+      margin-top: 10px;
+      background-color: #c4c4c4;
+      // border: 2px solid #3582c5;
+      border: none;
+      box-sizing: border-box;
+      border-radius: 12px;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 23px;
+      text-align: center;
+      letter-spacing: 0.05em;
+      color: white;
+
+      &.active {
+        background-color: #3582c5;
+        color: #ffffff;
+      }
+    }
+  }
+  .data-pipe-form {
+    .pipeline-connection-input-item {
+        margin-bottom: 24px;
+      .pipeline-connection-input {
+        height: 40px;
+        border-radius: 10px;
+        .ant-picker-input{
+          input{
+            font-weight: 600;
+            background-color: white !important;
+          }
+        }
+      }
+    }
+  
+    .datapipe-selection-import-export {
+      
+      .ant-select-selector {
+        border-radius: 10px;
+        
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+.nav-header {
+  position: fixed;
+  width: 100%;
+  height: 80px;
+  padding: 0 15px;
+  background-color: #2b314a;
+  z-index: 1;
+  box-shadow: 0px 4px 4px rgba(43, 45, 52, 0.1);
+  & .nav-header-content {
+    padding: 0 0px 0 5px;
+    height: 80px;
+    & .logo {
+      display: inline-block;
+      height: 24px;
+      width: 185px;
+      background: url("../../assets/images/common/D&D-Logo.png");
+      background-size: cover;
+      margin-top: 22px;
+      margin-left: 0px;
+    }
+    & .name {
+      font-size: 14px;
+      line-height: 18px;
+      text-align: center;
+      letter-spacing: 0.05em;
+      margin-top: 28px;
+      color: #ffffff;
+      display: inline-block;
+    }
+
+    & .right-side {
+      float: right;
+      & .navbar-right {
+        height: 80px;
+        margin-top: 0px;
+        & li {
+          display: inline-block;
+          & img {
+            width: 25px;
+            margin: 0 4px 5px 5px;
+          }
+        }
+        & .search {
+          margin-right: 20px;
+          vertical-align: top;
+          & .header-search-fields {
+            height: 48px;
+            width: 234px;
+            border-radius: 12px;
+          }
+        }
+        & .help {
+          width: 110px;
+          padding: 0 10px 0 15px;
+          margin-top: 10px;
+          cursor: pointer;
+        }
+        & .logout {
+          width: 120px;
+          padding: 0 10px 0 15px;
+          margin-top: 10px;
+          cursor: pointer;
+          color: #ffffff;
+          & img {
+            height: 22px;
+            margin: 0 4px 5px 5px;
+          }
+        }
+      }
+    }
+  }
+}

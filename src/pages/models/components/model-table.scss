@@ -1,0 +1,115 @@
+.models-table-div {
+  .delete-spinner {
+    & .ant-spin-dot-item {
+      background-color: white;
+    }
+  }
+}
+.modal-component {
+  & .ant-modal-content {
+    border-radius: 12px !important;
+    & .ant-modal-header {
+      border-top-left-radius: 12px;
+      border-top-right-radius: 12px;
+    }
+    & .ant-modal-body {
+      height: 100%;
+      padding: 40px 38px 30px;
+    }
+  }
+}
+
+.delete-modal {
+  text-align: center !important;
+  margin: 100px auto;
+  .del-button {
+    width: 130px;
+    height: 42px;
+    margin: 0 10px;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 23px;
+    text-align: center;
+    letter-spacing: 0.05em;
+
+    .ant-space-item {
+      margin: 0px !important;
+    }
+  }
+  .delete-ok {
+    background-color: #397acf;
+    border: none;
+    color: white;
+    border: 2px solid #397acf !important;
+  }
+  .delete-cancel {
+    border: 2px solid #397acf !important;
+    background-color: white;
+    color: #397acf;
+  }
+}
+
+.model-train-error {
+  color: red;
+  cursor: pointer;
+}
+
+.processing-status {
+  color: #1890ff;
+}
+
+.model-nav-link {
+  cursor: pointer;
+  color: #1890ff;
+}
+
+.model-info-icon {
+  cursor: pointer;
+  font-size: 24px;
+  color: #1890ff;
+}
+
+.model-info-error-icon {
+  cursor: pointer;
+  font-size: 24px;
+  color: #ff1e00;
+}
+
+.model-details-modal {
+  width: 50% !important;
+  margin: 20px auto;
+  overflow: hidden;
+  & .ant-modal-content {
+    & .ant-modal-header {
+      & .ant-modal-title {
+        font-size: 18px;
+      }
+    }
+    & .ant-modal-body {
+      min-height: 400px;
+      padding: 15px 38px 30px !important;
+      height: 500px;
+      overflow: scroll;
+    }
+  }
+}
+
+.loader-componet {
+  width: 60px;
+  display: inline-block;
+  margin: 100px 220px;
+}
+
+.details-str {
+  display: block;
+  margin-bottom: 5px;
+  &.headings {
+    font-weight: bold;
+    margin: 10px 0px;
+  }
+}
+
+.model-name-td {
+  cursor: pointer;
+}

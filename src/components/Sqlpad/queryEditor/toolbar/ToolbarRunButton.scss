@@ -1,0 +1,41 @@
+.toolbar-btn,
+.toolbar-btn:hover,
+.toolbar-btn:focus {
+  background-color: #397acf;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  float: right;
+  margin-right: 5px;
+  height: 27px;
+}
+
+.toolbar-btn {
+  &:disabled {
+    &:hover {
+      color: rgba(0, 0, 0, 0.25);
+      background-color: #eee;
+      box-shadow: 0 1px 0 rgba(0, 0, 0, 0.065);
+      border: 1px solid transparent;
+      padding: 0 10px;
+      border-color: #d9d9d9;
+    }
+  }
+}
+
+.check-syntax-btn,
+.check-syntax-btn:hover,
+.check-syntax-btn:focus {
+  width: 110px;
+}
+.execut-btn,
+.execut-btn:hover,
+.execut-btn:focus {
+  width: 75px;
+}
+
+.save-execut-btn,
+.save-execut-btn:hover,
+.save-execut-btn:focus {
+  width: 140px;
+}
