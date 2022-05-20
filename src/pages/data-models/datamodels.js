@@ -7,9 +7,8 @@ import {
 } from "./services/dataModelsService";
 import { connect } from "react-redux";
 import { setActiveModelAction } from "../../actions/globle-action";
-import { resetModelBuild } from "../model-build/actions/modelBuild-action";
 import ClickableCardAnalytics from "./components/clickableCardAnalytics";
-import { useHistory } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 import { getPowerBiAccess } from "./services/dataModelsService";
 import configConstants from "../../config/constants";
 import Iframe from "react-iframe";
@@ -44,6 +43,8 @@ const BuildModel = ({
   const [mapList, setMapList] = useState([]);
   const [mapFiltered, setMapFiltered] = useState([]);
 
+  const mockData = [{ name: "A", location: "B", price: 80, qty: 5 }];
+
   useEffect(() => {
     onInitDataInPage();
   }, []);
@@ -70,7 +71,7 @@ const BuildModel = ({
         <Row>
           <Col style={{ textAlign: "center" }} span={24}>
             <div className="build-model-header-div">
-              <h1 className="build-model-header">Your Analytics</h1>
+              <h1 className="build-model-header">Products</h1>
             </div>
           </Col>
         </Row>
@@ -124,6 +125,19 @@ const BuildModel = ({
                         <Col span={8}>Price </Col>
                         <Col span={1}>:</Col>
                         <Col>{modelData.price}</Col>
+                      </Row>
+                      <Row>
+                        <Col span={12}>
+                          <Button
+                            type="primary"
+                            htmlType="button"
+                            style={{ width: "100%" }}
+                          >
+                            <NavLink exact to={"/orders"}>
+                              Order
+                            </NavLink>
+                          </Button>
+                        </Col>
                       </Row>
                     </ClickableCardAnalytics>
                   </div>
@@ -189,7 +203,6 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   setCurrentActiveModel: (payload) => dispatch(setActiveModelAction(payload)),
-  resetModelBuild: () => dispatch(resetModelBuild()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(BuildModel);

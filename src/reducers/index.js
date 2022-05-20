@@ -13,11 +13,9 @@ import {
 
 
 import loginReducer from "../pages/login/reducers/login-reducer";
-import modelBuildReducer from "../pages/model-build/reducers/modelBuild-reducer";
 import createAccountReducer from "../pages/create-account/reducers/createAccount-reducer";
 import globleReducer from "./globle-reducer";
 import loadDataReducer from "../pages/load-data/reducers/loadData-reducer";
-import modelDataReducer from "../pages/model-setup/reducers/modelData-reducer";
 
 // const rootReducer = (state, action) => {
 //   if (action.type === SET_LOGOUT_SUCCESS) {
@@ -64,11 +62,9 @@ const rootReducer = (state, action) => {
 
 const appReducer = combineReducers({
   mainViewState: loginReducer,
-  modelBuildState: modelBuildReducer,
   globleState: globleReducer,
   createAccountState: createAccountReducer,
-  loadDataState: loadDataReducer,
-  modelDataState : modelDataReducer
+  loadDataState: loadDataReducer
 });
 
 export default rootReducer;
