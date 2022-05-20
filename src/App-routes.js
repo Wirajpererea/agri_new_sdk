@@ -36,6 +36,8 @@ import {
 } from "./pages/load-data/actions/loadData-action";
 import sessionStorage from "redux-persist/es/storage/session";
 import login from "./pages/login/login";
+import orders from "./pages/orders/orders";
+import profile from "./pages/profile/profile";
 
 const { Content } = Layout;
 
@@ -121,9 +123,8 @@ const AppRoutes = ({
                 />
               </>
             ) : ( */}
-          <Route path="/" exact component={Dashboard} />
-          <Route path="/view" exact component={DataModels} />
-          <Route path="/login" exact component={login} />
+          <Route path="/" exact component={login} />
+          <Route path="/signup" exact component={Dashboard} />
           <React.Fragment>
             <HeaderNav
               collapsed={collapsed}
@@ -134,7 +135,10 @@ const AppRoutes = ({
               loadLoadDataPage={loadLoadDataPage}
             >
               <Content className="content">
+                <Route path="/view" exact component={DataModels} />
                 <Route path="/products" exact component={Products} />
+                <Route path="/orders" exact component={orders} />
+                <Route path="/profile" exact component={profile} />
                 <Route path="/licence" exact component={LicencePage} />
                 <Route path="/connections" exact component={ConnectionsPage} />
                 <Route
@@ -155,7 +159,7 @@ const AppRoutes = ({
                   exact
                   component={DataDictionaryPage}
                 />
-                
+
                 <Route path="/models" exact component={ModelsPage} />
                 <Route path="/model-setup" exact component={ModelSetup} />
                 <Route
