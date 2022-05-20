@@ -1,0 +1,135 @@
+.title {
+  margin-bottom: 40px;
+}
+
+.user-management-card {
+  &.page-section {
+    & .ant-card-body {
+      padding: 30px 20px;
+      & .title {
+        display: inline-block;
+        margin: 0px auto 10px auto;
+      }
+    }
+    & .ant-pagination-item-active {
+      background-color: #3582c5;
+      color: #ffffff;
+      & a {
+        color: #ffffff;
+      }
+    }
+  }
+}
+
+.user-mgt-search-input-row {
+  margin-bottom: 50px;
+}
+
+.user-mgt-empty-user-data {
+  display: block;
+  margin: 5% auto;
+  width: 125px;
+  font-size: 20px;
+}
+
+.search-input {
+  border-radius: 10px;
+  border: 1px solid black;
+  height: 40px;
+  width: 98%;
+}
+
+.user-mgt-form-submit-button {
+  height: 40px;
+  background-color: #c4c4c4;
+  // border: 2px solid #3582c5;
+  border: none;
+  box-sizing: border-box;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 23px;
+  text-align: center;
+  letter-spacing: 0.05em;
+  color: white;
+
+  &.active {
+    background-color: #ffffff;
+    color: #1890ff;
+    width: 95%;
+  }
+  &.active-primary {
+    background-color: #3582c5;
+    color: #ffffff;
+    width: 95%;
+  }
+  &.active-primary-outlined {
+    background-color: #ffffff;
+    color: #3582c5;
+    border-color: #3582c5;
+    border: solid;
+    width: 95%;
+  }
+  &.search{
+    background-color: #ffffff;
+    color: #1890ff;
+  }
+  &.save {
+    background-color: #ffffff;
+    color: #1890ff;
+    width: 95%;
+  }
+
+  &.delete {
+    background-color: #ffffff;
+    color: #1890ff;
+    width: 95%;
+  }
+  &.edit {
+    background-color: #ffffff;
+    color: #1890ff;
+    width: 95%;
+  }
+  &.hidden {
+    display: none;
+  }
+  
+}
+
+.user-mgt-form-item {
+  margin-bottom: 0px;
+  padding-left: 5px;
+  padding-right: 2px;
+}
+
+.user-mgt-data-row {
+  margin-bottom: 5px;
+  &.table-head {
+    text-align: left;
+  }
+}
+
+.user-mgt-pagination-row {
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+.user-mgt-checkbox-column {
+  padding-top: 5px;
+  text-align: left;
+}
+
+.dsp-confirm-box {
+  overflow: hidden;
+  border-radius: 15px;
+  padding-bottom : 0px;
+}
+
+// @media screen and (max-width: 1600px) {
+//   .user-mgt-data-row {
+//     width: 1280px;
+//   } 
+  
+//   .user-data-editable {
+//    overflow-x: scroll; 
+//   }
+// }
