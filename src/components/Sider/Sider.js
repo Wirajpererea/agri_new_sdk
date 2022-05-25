@@ -58,7 +58,7 @@ const SiderComponet = ({
             key="products"
             icon={<PayCircleOutlined />}
           >
-            <NavLink exact to={"/products"}>
+            <NavLink exact to={"/profile"}>
               My Profile
             </NavLink>
           </Menu.Item>
@@ -68,7 +68,16 @@ const SiderComponet = ({
             icon={<PayCircleOutlined />}
           >
             <NavLink exact to={"/products"}>
-              Products
+              Add Products
+            </NavLink>
+          </Menu.Item>
+          <Menu.Item
+            className="menu-item"
+            key="products"
+            icon={<PayCircleOutlined />}
+          >
+            <NavLink exact to={"/view"}>
+              View Products
             </NavLink>
           </Menu.Item>
         </Menu>
