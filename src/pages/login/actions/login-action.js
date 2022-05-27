@@ -169,6 +169,7 @@ export const loginAction = (loginData) => {
       dispatch(setLoginPending(false));
       if (response.data.message === "success") {
         sessionStorage.setItem("token", response.data.body.token);
+        sessionStorage.setItem("userData", response.data.body);
         dispatch(
           setLoginSuccess(
             true,
@@ -207,6 +208,8 @@ export const logOutAction = (userData) => {
       const response = true;
       dispatch(setLogOutPending(false));
       if (response) {
+        sessionStorage.removeItem("userData");
+        sessionStorage.removeItem("token");
         dispatch(setLogOutSuccess(true));
       } else {
         dispatch(setLogOutError({ message: "User logout fail" }));

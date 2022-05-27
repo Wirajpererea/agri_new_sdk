@@ -1,5 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { Form, Input, Button, Row, Col, Select, DatePicker } from "antd";
+import {
+  Form,
+  Input,
+  Button,
+  Row,
+  Col,
+  Select,
+  DatePicker
+} from "antd";
 import { connect } from "react-redux";
 import "./dashboardPage.scss";
 
@@ -12,7 +20,7 @@ import {
 import CryptoJS from "crypto-js";
 import UserImgIcon from "../../assets/images/web/signup.jpg";
 import { registerUser } from "./services/dashboardService";
-import moment from 'moment';
+import moment from "moment";
 
 const FormItem = Form.Item;
 const { Option } = Select;
@@ -32,6 +40,8 @@ const Dashboard = ({
   const [lastName, setLastName] = useState(LastName);
   const [email, setEmail] = useState(Email);
   const [userStatus, setUserStatus] = useState(Status);
+  const [userType, setUserType] = useState();
+  const [agreed, setAgreed] = useState(false);
   const [password, setPassword] = useState("");
   const [cPassword, setCPassword] = useState("");
   const [isValidPasswordState, setIsValidPasswordState] = useState(false);
@@ -93,7 +103,7 @@ const Dashboard = ({
     }
   };
 
-  const handleSubmit = async(data) => {
+  const handleSubmit = async (data) => {
     console.log("data===>", data);
     //   [name]
     //  ,[nic]
@@ -109,16 +119,17 @@ const Dashboard = ({
     //  ,[recorded_date]
     let user = {
       ...data,
-      dateOfBirth: moment(data.dateOfBirth).format("YYYY-MM-DD")
-    }
-    console.log("user==>",user)
+      dateOfBirth: moment(data.dateOfBirth).format("YYYY-MM-DD"),
+    };
+    console.log("user==>", user);
     const regUser = await registerUser(user);
-    console.log("usregUserer==>",regUser)
-
-
+    console.log("usregUserer==>", regUser);
   };
   const selectionChange = (val) => {
-    console.log("val", val);
+    setUserType(val);
+  };
+  const termsAndConditionsChange = (e) => {
+    setAgreed(e.target.checked);
   };
   return (
     <div>
@@ -264,12 +275,59 @@ const Dashboard = ({
                     <Select
                       style={{ width: "200px" }}
                       onChange={(e) => selectionChange(e)}
+                      rules={[
+                        {
+                          required: true,
+                        },
+                      ]}
                     >
                       <Option value="seller">Seller</Option>
                       <Option value="consumer">Consumer</Option>
                       <Option value="transporter">Transporter</Option>
                     </Select>
                   </FormItem>
+                  <br />
+                  {userType === "transporter" && (
+                    <>
+                      <label className="connection-input-label block-container-item">
+                        Vehicle Number
+                      </label>
+                      <FormItem
+                        className="connection-input-item password-field"
+                        name="vehicleNumber"
+                        rules={[
+                          {
+                            required: true,
+                          },
+                        ]}
+                      >
+                        <Input
+                          className="connection-input block-container-item"
+                          type="vehicleNumber"
+                        />
+                      </FormItem>
+                      <br />
+                      <label className="connection-input-label block-container-item">
+                        Vehicle Type
+                      </label>
+                      <FormItem
+                        className="connection-input-item password-field"
+                        name="vehicleType"
+                        rules={[
+                          {
+                            required: true,
+                          },
+                        ]}
+                      >
+                        <Select style={{ width: "200px" }}>
+                          <Option value="lorry">Lorry</Option>
+                          <Option value="mini-lorry">Mini-Lorry</Option>
+                          <Option value="truck">Truck</Option>
+                          <Option value="container">Container</Option>
+                        </Select>
+                      </FormItem>
+                    </>
+                  )}
                   <br />
                   <label className="connection-input-label block-container-item">
                     New Password
@@ -308,6 +366,26 @@ const Dashboard = ({
                       className="connection-input"
                       type="password"
                     />
+                  </Form.Item>
+
+                  <Form.Item
+                    name="termsAndConditions"
+                    rules={[
+                      {
+                        required: false,
+                      },
+                    ]}
+                  >
+                    <input
+                      type="checkbox"
+                      onChange={termsAndConditionsChange}
+                      checked={agreed}
+                    />
+                    &nbsp;
+                    I have read and agreed to{" "}
+                    <a target="_blank" href="https://www.google.com/">
+                      terms and conditions.
+                    </a>
                   </Form.Item>
                 </Col>
               </Row>
