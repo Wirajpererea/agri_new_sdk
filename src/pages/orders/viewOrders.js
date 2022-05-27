@@ -4,29 +4,45 @@ import { Table, Row, Col, Button, Spin, Input } from "antd";
 import { connect } from "react-redux";
 import { setActiveModelAction } from "../../actions/globle-action";
 import { getOrders } from "./services/orderService";
-
+import moment from "moment";
 const ViewOrders = () => {
   const [orders, setOrders] = useState([]);
   const [tableColumns, setTableColumns] = useState([
     {
-      title: "Name",
-      dataIndex: "name",
-      key: "name",
+      title: "Product Name",
+      dataIndex: "productName",
+      key: "productName",
     },
     {
       title: "Requested Date",
-      dataIndex: "requested_date",
-      key: "requested_date",
+      dataIndex: "dateRequested",
+      key: "dateRequested",
+      render: (text, record) => (
+        <p className="warning-tags">{moment(text).format("YYYY-MM-DD")}</p>
+      ),
+    },
+    {
+      title: "Requested User",
+      dataIndex: "userName",
+      key: "userName",
     },
     {
       title: "Quantity",
-      dataIndex: "requested_qty",
-      key: "requested_qty",
+      dataIndex: "qty",
+      key: "qty",
     },
     {
-      title: "Price",
+      title: "Unit Price",
       dataIndex: "price",
       key: "price",
+    },
+    {
+      title: "Total Price",
+      dataIndex: "price",
+      key: "price",
+      render: (text, record) => (
+        <p className="warning-tags">{text * record.qty}</p>
+      ),
     },
     {
       title: "",
@@ -34,12 +50,12 @@ const ViewOrders = () => {
       fixed: "right",
       width: 40,
       render: (tableRow) => {
-        return (
+        return tableRow.isTransported != 1 ? (
           <span>
             <Button
-            //   onClick={() => {
-            //     handleDeleteData(tableRow.id);
-            //   }}
+              //   onClick={() => {
+              //     handleDeleteData(tableRow.id);
+              //   }}
               style={{
                 marginRight: 8,
               }}
@@ -47,6 +63,8 @@ const ViewOrders = () => {
               Transport
             </Button>
           </span>
+        ) : (
+          <p>Transported by {tableRow.transporterName}</p>
         );
       },
     },
@@ -58,7 +76,7 @@ const ViewOrders = () => {
   const onInitDataInPage = async () => {
     const user = JSON.parse(sessionStorage.getItem("userData"));
     const orderResults = await getOrders(user.user_row_id);
-    setOrders(orderResults);
+    setOrders(orderResults.data.body);
   };
 
   return (
