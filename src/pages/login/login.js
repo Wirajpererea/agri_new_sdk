@@ -98,6 +98,7 @@ const Login = ({
    console.log("loginResult====>",loginResult);
    if(loginResult.data?.body.status === true)
    {
+    sessionStorage.setItem("userData", JSON.stringify(loginResult.data?.body.user));
     history.push("/products");
    }
   };

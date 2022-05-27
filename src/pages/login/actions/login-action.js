@@ -169,7 +169,6 @@ export const loginAction = (loginData) => {
       dispatch(setLoginPending(false));
       if (response.data.message === "success") {
         sessionStorage.setItem("token", response.data.body.token);
-        sessionStorage.setItem("userData", response.data.body);
         dispatch(
           setLoginSuccess(
             true,
