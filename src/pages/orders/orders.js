@@ -10,7 +10,7 @@ import {
   Alert,
   notification,
   Upload,
-  Modal
+  Modal,
 } from "antd";
 import { connect } from "react-redux";
 // import "./products.scss";
@@ -41,8 +41,10 @@ const Orders = () => {
     formData.dateRequested = requestedDate;
     formData.qty = requestedQty;
     formData.product_row_id = location.state.selectedProduct.product_row_id;
-    formData.user_row_id = requestedQty;
+    const userData = JSON.parse(sessionStorage.getItem("userData"));
+    formData.user_row_id = userData.user_row_id;
     const addOrderResult = await addOrder(formData);
+
     if (addOrderResult.data.message === "success") {
       const args = {
         message: "Order Added Successfully",
@@ -98,7 +100,7 @@ const Orders = () => {
                 // customClass="user-management-card page-section"
                 >
                   <h2 className="title">Place Order</h2>
-                  <form onSubmit={handleSubmit} className="connection-form">
+                  <form className="connection-form">
                     <Row>
                       <Col span={12}>
                         <label className="connection-input-label block-container-item">
@@ -128,8 +130,8 @@ const Orders = () => {
                     <Row>
                       <Col>
                         <Button
+                          onClick={() => handleSubmit()}
                           type="primary"
-                          htmlType="submit"
                           className="form-submit-button active"
                         >
                           {`Add`}
