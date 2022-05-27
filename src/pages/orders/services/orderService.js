@@ -34,7 +34,7 @@ export const getOrders = async (uid) => {
 export const getTransporters = async (uid) => {
   try {
     const apiUrl = configConstants.apiUrlWithPort;
-    const userData = await axios.get(`${apiUrl}/api/v1/getTransportUsers`);
+    const userData = await axios.get(`${apiUrl}/api/v1/auth/getTransportUsers`);
     return userData;
   } catch (err) {
     throw err;

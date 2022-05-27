@@ -17,7 +17,7 @@ import {
   updateUserDataAction,
   resetUserDataAction,
 } from "../login/actions/login-action";
-import { addOrder, getTransporters } from "./services/orderService";
+import { addOrder, addTransportOrder, getTransporters } from "./services/orderService";
 import { useLocation } from "react-router-dom";
 
 const FormItem = Form.Item;
@@ -33,14 +33,15 @@ const AddTransport = () => {
   }, []);
 
   const onInitDataInPage = async () => {
-    const Transporters = await getTransporters();
-    setTransporters(Transporters && Transporters.data.body);
+    const transporterss = await getTransporters();
+    console.log("transporters-->",transporterss)
+    setTransporters(transporterss?.data.body);
   };
 
   const handleSubmit = async () => {
     const formData = {};
     formData.orderId = location.state.selectedOrder.order_row_id;
-    formData.tranportedBy = selectedTransporter;
+    formData.transportedBy = selectedTransporter;
     const addOrderResult = await addTransportOrder(formData);
 
     if (addOrderResult.data.message === "success") {
@@ -69,24 +70,24 @@ const AddTransport = () => {
               <Row>
                 <Col span={8}>User </Col>
                 <Col span={1}>:</Col>
-                <Col>{location.state.selectedProduct.userName}</Col>
+                <Col>{location.state.selectedOrder.userName}</Col>
               </Row>
               <Row>
                 <Col span={8}>Qty </Col>
                 <Col span={1}>:</Col>
-                <Col>{location.state.selectedProduct.qty}</Col>
+                <Col>{location.state.selectedOrder.qty}</Col>
               </Row>
               <Row>
                 <Col span={8}>Unit Price </Col>
                 <Col span={1}>:</Col>
-                <Col>{location.state.selectedProduct.price}</Col>
+                <Col>{location.state.selectedOrder.price}</Col>
               </Row>
               <Row>
                 <Col span={8}>Total Price </Col>
                 <Col span={1}>:</Col>
                 <Col>
-                  {location.state.selectedProduct.qty *
-                    location.state.selectedProduct.price}
+                  {location.state.selectedOrder.qty *
+                    location.state.selectedOrder.price}
                 </Col>
               </Row>
             </div>
@@ -111,18 +112,16 @@ const AddTransport = () => {
                         <FormItem className="connection-input-item" name="qty">
                           <Select
                             onChange={(e) => {
-                              setSelectedTransporter(e.target.value);
+                              setSelectedTransporter(e);
                             }}
                           >
-                            {transporters.map((record) => (
-                              <>
-                                <Option
-                                  value={record.tranportedBy}
-                                  key={record.tranportedBy}
+                            {transporters && transporters.length > 0 && transporters.map((record) => (
+                                <option
+                                  value={record.user_row_id}
+                                  key={record.name}
                                 >
-                                  {record.transporterName}
-                                </Option>
-                              </>
+                                  {record.name}
+                                </option>
                             ))}
                           </Select>
                         </FormItem>

@@ -26,6 +26,8 @@ import login from "./pages/login/login";
 import orders from "./pages/orders/orders";
 import profile from "./pages/profile/profile";
 import viewOrders from "./pages/orders/viewOrders";
+import { addTransportOrder } from "./pages/orders/services/orderService";
+import addTransport from "./pages/orders/addTransport";
 
 const { Content } = Layout;
 
@@ -128,6 +130,7 @@ const AppRoutes = ({
                 <Route path="/orders" exact component={orders} />
                 <Route path="/profile" exact component={profile} />
                 <Route path="/view-orders" exact component={viewOrders} />
+                <Route path="/add-transport" exact component={addTransport} />
                 <Route path="/view-transport-orders" exact component={profile} />
                 <Route
                   path="/user-management"

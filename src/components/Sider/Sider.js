@@ -89,7 +89,7 @@ const SiderComponet = ({
               View Orders
             </NavLink>
           </Menu.Item>
-          <Menu.Item
+          {/* <Menu.Item
             className="menu-item"
             key="products"
             icon={<PayCircleOutlined />}
@@ -97,7 +97,7 @@ const SiderComponet = ({
             <NavLink exact to={"/view-transport-orders"}>
               View Transport Orders
             </NavLink>
-          </Menu.Item>
+          </Menu.Item> */}
         </Menu>
       </Sider>
       <Layout className="site-layout">{children}</Layout>
