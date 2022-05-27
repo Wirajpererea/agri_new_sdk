@@ -8,21 +8,15 @@ import {
   Select,
   Table,
   Alert,
-  notification,
-  Upload,
-  Modal,
+  notification
 } from "antd";
 import { connect } from "react-redux";
-// import "./products.scss";
 
-import { Card, MessageAlert } from "../../components";
-import { validatePassword } from "../../utils/utils";
+import { Card } from "../../components";
 import {
   updateUserDataAction,
   resetUserDataAction,
 } from "../login/actions/login-action";
-import CryptoJS from "crypto-js";
-import UserImgIcon from "../../assets/images/web/signup.jpg";
 import { addOrder } from "./services/orderService";
 import DatePickerComponent from "../../components/DatePicker/DatePicker";
 import { useLocation } from "react-router-dom";
@@ -31,8 +25,6 @@ const FormItem = Form.Item;
 
 const Orders = () => {
   let location = useLocation();
-  console.log(location.state.selectedProduct, "selected product data");
-
   const [requestedDate, setRequestedDate] = useState("");
   const [requestedQty, setRequestedQty] = useState(0);
 
@@ -130,11 +122,12 @@ const Orders = () => {
                     <Row>
                       <Col>
                         <Button
+                          disabled={requestedQty === 0 || requestedDate === ""}
                           onClick={() => handleSubmit()}
                           type="primary"
                           className="form-submit-button active"
                         >
-                          {`Add`}
+                          Add
                         </Button>
                       </Col>
                       <Col span={2}></Col>

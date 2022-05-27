@@ -59,7 +59,6 @@ const BuildModel = ({
   const onClickHandler = async (cardId, model) => {};
 
   const searchChange = (e) => {
-    console.log(e.target.value, "////////////////////");
     const mapFilteredList =
       mapList && mapList.filter((map) => map.name.includes(e.target.value));
     setMapFiltered(mapFilteredList);

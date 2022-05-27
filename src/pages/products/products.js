@@ -439,14 +439,6 @@ const Products = ({
           </Card>
         </Col>
       </Row>
-
-      {products.length > 0 && (
-        <Table
-          dataSource={products}
-          columns={tableColumns}
-          pagination={{ defaultPageSize: 5 }}
-        />
-      )}
     </div>
   );
 };

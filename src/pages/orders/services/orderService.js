@@ -10,3 +10,13 @@ export const addOrder = async (data) => {
     throw err;
   }
 };
+
+export const getOrders = async (uid) => {
+  try {
+    const apiUrl = configConstants.apiUrlWithPort;
+    const orderData = await axios.get(`${apiUrl}/api/v1/order?userId=${uid}`);
+    return orderData;
+  } catch (err) {
+    throw err;
+  }
+};

@@ -1,43 +1,14 @@
-import React, { useState, useEffect } from "react";
-import {
-  Form,
-  Input,
-  Button,
-  Row,
-  Col,
-  Select,
-  Table,
-  Alert,
-  notification,
-  Upload,
-  Modal,
-} from "antd";
+import React from "react";
+import { Row, Col } from "antd";
 import { connect } from "react-redux";
-
 import { Card } from "../../components";
 import {
   updateUserDataAction,
   resetUserDataAction,
 } from "../login/actions/login-action";
-// import {
-//   addProducts,
-//   getProducts,
-//   updateProducts,
-// } from "./services/profileService";
 
-const Profile = ({ userData }) => {
-  const { Email, FirstName, LastName, Status } = userData;
-
-  //   useEffect(() => {
-  //     onInitPageLoadOut();
-  //   }, []);
-
-  //   const onInitPageLoadOut = async () => {
-  //     let data = {
-  //       userId: 1,
-  //     };
-  //   };
-
+const Profile = () => {
+  const user = JSON.parse(sessionStorage.getItem("userData"));
   return (
     <div>
       <Row>
@@ -58,17 +29,22 @@ const Profile = ({ userData }) => {
             <Row>
               <Col span={8}>Name </Col>
               <Col span={1}>:</Col>
-              <Col>{`${FirstName} ${LastName}`}</Col>
+              <Col>{user?.name}</Col>
             </Row>
             <Row>
               <Col span={8}>Email </Col>
               <Col span={1}>:</Col>
-              <Col>{Email}</Col>
+              <Col>{user?.email}</Col>
+            </Row>
+            <Row>
+              <Col span={8}>Type </Col>
+              <Col span={1}>:</Col>
+              <Col>{user?.type}</Col>
             </Row>
             <Row>
               <Col span={8}>Status </Col>
               <Col span={1}>:</Col>
-              <Col>{Status}</Col>
+              <Col>{user?.status}</Col>
             </Row>
           </Card>
         </Col>
