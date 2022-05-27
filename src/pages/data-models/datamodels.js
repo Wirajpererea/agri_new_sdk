@@ -133,7 +133,13 @@ const BuildModel = ({
                             htmlType="button"
                             style={{ width: "100%" }}
                           >
-                            <NavLink exact to={"/orders"}>
+                            <NavLink
+                              exact
+                              to={{
+                                pathname: "/orders",
+                                state: { selectedProduct: modelData },
+                              }}
+                            >
                               Order
                             </NavLink>
                           </Button>
