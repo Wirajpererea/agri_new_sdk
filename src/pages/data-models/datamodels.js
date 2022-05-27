@@ -63,7 +63,6 @@ const BuildModel = ({
     const mapFilteredList =
       mapList && mapList.filter((map) => map.name.includes(e.target.value));
     setMapFiltered(mapFilteredList);
-    
   };
   return (
     <div className="build-model-container model-analytics-container">
@@ -187,6 +186,25 @@ const BuildModel = ({
                         <Col span={8}>Price </Col>
                         <Col span={1}>:</Col>
                         <Col>{modelData.price}</Col>
+                      </Row>
+                      <Row>
+                        <Col span={12}>
+                          <Button
+                            type="primary"
+                            htmlType="button"
+                            style={{ width: "100%" }}
+                          >
+                            <NavLink
+                              exact
+                              to={{
+                                pathname: "/orders",
+                                state: { selectedProduct: modelData },
+                              }}
+                            >
+                              Order
+                            </NavLink>
+                          </Button>
+                        </Col>
                       </Row>
                     </ClickableCardAnalytics>
                   </div>
