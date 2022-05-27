@@ -4,6 +4,7 @@ import { Table, Row, Col, Button, Spin, Input } from "antd";
 import { connect } from "react-redux";
 import { setActiveModelAction } from "../../actions/globle-action";
 import { getOrders } from "./services/orderService";
+import { NavLink } from "react-router-dom";
 
 const ViewOrders = () => {
   const [orders, setOrders] = useState([]);
@@ -36,16 +37,15 @@ const ViewOrders = () => {
       render: (tableRow) => {
         return (
           <span>
-            <Button
-            //   onClick={() => {
-            //     handleDeleteData(tableRow.id);
-            //   }}
-              style={{
-                marginRight: 8,
+            <NavLink
+              exact
+              to={{
+                pathname: "/add-transport",
+                state: { selectedOrder: tableRow },
               }}
             >
               Transport
-            </Button>
+            </NavLink>
           </span>
         );
       },
