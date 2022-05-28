@@ -6,22 +6,17 @@ import {
   Row,
   Col,
   Checkbox,
-  Pagination,
   notification,
   Spin,
-  Empty,
-  Tooltip,
   Typography,
   Transfer,
   Table,
-  Popconfirm,
   Tag,
   Select,
 } from "antd";
 import { connect } from "react-redux";
 import "./userManagement-batch.scss";
-import { Card, MessageAlert, DspConfirmBox, Modal } from "../../components";
-import { validatePassword } from "../../utils/utils";
+import { Card, DspConfirmBox, Modal } from "../../components";
 import {
   updateUserDataAction,
   resetUserDataAction,
@@ -43,7 +38,6 @@ import {
   getGroupApi,
 } from "./services/services";
 import CryptoJS from "crypto-js";
-import jwt from "jwt-decode";
 const { Option } = Select;
 const mockData = [
   { key: 1, title: "User Management", value: "um", userId: 2 },
@@ -58,15 +52,11 @@ const initialTargetKeys = mockData
   .map((item) => item.key);
 
 const FormItem = Form.Item;
-const { Paragraph } = Typography;
 
 const UserManagementBatch = ({
   userData,
-  updateUser,
-  userDataUpdateState,
   resetUserDataStatus,
 }) => {
-  const { Email, FirstName, LastName } = userData;
   const [form] = Form.useForm();
 
   const [userDataState, setUserDataState] = useState([]);
@@ -89,10 +79,8 @@ const UserManagementBatch = ({
   const [selectedKeys, setSelectedKeys] = useState([]);
   const [userRoles, setUserRoles] = useState([]);
   const [editingKey, setEditingKey] = useState("");
-  const [data, setData] = useState(userDataState);
   const [editData, setEditData] = useState(null);
   const [newAddUser, setNewAddUser] = useState(false);
-  const [newUser, setNewUser] = useState(null);
   const [editInView, setEditInView] = useState(false);
   const [selectedUserId, setSelectedUserId] = useState("");
   const [pagination, setPagination] = useState({
@@ -100,8 +88,6 @@ const UserManagementBatch = ({
     pageSize: 10,
   });
   const [groupList, setGroupList] = useState([]);
-
-  const isEditing = (record) => record.key === editingKey;
 
   useEffect(() => {
     return () => {

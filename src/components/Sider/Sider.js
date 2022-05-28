@@ -1,39 +1,18 @@
 import React, { useEffect, useState } from "react";
-import { Layout, Menu, Button } from "antd";
+import { Layout, Menu } from "antd";
 import { NavLink } from "react-router-dom";
-import {
-  PayCircleOutlined,
-  PlusCircleOutlined,
-  UploadOutlined,
-} from "@ant-design/icons";
+import { PayCircleOutlined } from "@ant-design/icons";
 import { connect } from "react-redux";
 import "./Sider.scss";
 import UserImgIcon from "../../assets/icons/user.png";
-import BuildModeGIF from "../../assets/images/common/BuildnewModelbutton.gif";
-import jwt from "jwt-decode";
 
 const { Sider } = Layout;
-const Menus = [0];
 
-const SiderComponet = ({
-  children,
-  collapsed,
-  configData,
-  setActiveModel,
-  userData,
-  loadLoadDataPage,
-}) => {
+const SiderComponet = ({ children, collapsed, userData }) => {
   const [menuList, setMenuList] = useState([0]);
-  const [roleList, setRoleList] = useState([0]);
 
-  useEffect(() => {}, []);
   useEffect(() => {}, [menuList]);
 
-  const checkMenuItem = (menuId) => {
-    let isValid = true;
-
-    return isValid;
-  };
   return (
     <Layout className="data-view-with-sider">
       <Sider

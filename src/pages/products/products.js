@@ -5,9 +5,6 @@ import {
   Button,
   Row,
   Col,
-  Select,
-  Table,
-  Alert,
   notification,
   Upload,
   Modal,
@@ -15,14 +12,12 @@ import {
 import { connect } from "react-redux";
 import "./products.scss";
 
-import { Card, MessageAlert } from "../../components";
+import { Card } from "../../components";
 import { validatePassword } from "../../utils/utils";
 import {
   updateUserDataAction,
   resetUserDataAction,
 } from "../login/actions/login-action";
-import CryptoJS from "crypto-js";
-import UserImgIcon from "../../assets/images/web/signup.jpg";
 import {
   addProducts,
   getProducts,
@@ -31,14 +26,9 @@ import {
 import { PlusOutlined } from "@ant-design/icons";
 
 const FormItem = Form.Item;
-const { Option } = Select;
 
 const Products = ({
-  userData,
-  updateUser,
-  userDataUpdateState,
-  userDataUpdateStateBody,
-  resetUserDataStatus,
+  userData
 }) => {
   const { Email, FirstName, LastName, Status } = userData;
   const [form] = Form.useForm();
@@ -47,103 +37,15 @@ const Products = ({
   const [firstName, setFirstName] = useState(FirstName);
   const [lastName, setLastName] = useState(LastName);
   const [email, setEmail] = useState(Email);
-  const [userStatus, setUserStatus] = useState(Status);
   const [password, setPassword] = useState("");
   const [cPassword, setCPassword] = useState("");
   const [isValidPasswordState, setIsValidPasswordState] = useState(false);
   const [passwordValidtionStates, setPasswordValidtionStates] = useState({
     minLength: true,
   });
-  const [dataRows, setDataRows] = useState([
-    {
-      name: "test",
-      location: "test",
-      qty: "10kg",
-      price: "100.00",
-    },
-    {
-      name: "test2",
-      location: "test2",
-      qty: "10kg",
-      price: "100.00",
-    },
-    {
-      name: "test3",
-      location: "test3",
-      qty: "10kg",
-      price: "100.00",
-    },
-    {
-      name: "test4",
-      location: "test4",
-      qty: "10kg",
-      price: "100.00",
-    },
-  ]);
+
   const [isEdit, setIsEdit] = useState(false);
   const [editData, setEditData] = useState(null);
-
-  const [tableColumns, setTableColumns] = useState([
-    {
-      title: "Name",
-      dataIndex: "name",
-      key: "name",
-    },
-    {
-      title: "Location",
-      dataIndex: "location",
-      key: "location",
-    },
-    {
-      title: "Quantity",
-      dataIndex: "qty",
-      key: "qty",
-    },
-    {
-      title: "Price",
-      dataIndex: "price",
-      key: "price",
-    },
-    {
-      title: "",
-      key: "",
-      width: 40,
-      fixed: "right",
-      render: (tableRow) => {
-        return (
-          <Button
-            onClick={() => {
-              handleEditData(tableRow);
-            }}
-          >
-            Edit
-          </Button>
-        );
-      },
-    },
-    {
-      title: "",
-      key: "operation",
-      fixed: "right",
-      width: 40,
-      render: (tableRow) => {
-        return (
-          <span>
-            <Button
-              onClick={() => {
-                handleDeleteData(tableRow.id);
-              }}
-              style={{
-                marginRight: 8,
-              }}
-            >
-              Delete
-            </Button>
-          </span>
-        );
-      },
-    },
-  ]);
 
   const [products, setProducts] = useState([]);
   const [previewVisible, setPreviewVisible] = useState(false);

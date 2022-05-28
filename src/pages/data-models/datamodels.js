@@ -1,57 +1,26 @@
 import React, { useEffect, useState } from "react";
-import { Table, Row, Col, Button, Spin, Input } from "antd";
+import { Row, Col, Button, Input } from "antd";
 import "./datamodels.scss";
-import {
-  getDataDictionaryData,
-  getAnalyticsData,
-} from "./services/dataModelsService";
 import { connect } from "react-redux";
 import { setActiveModelAction } from "../../actions/globle-action";
 import ClickableCardAnalytics from "./components/clickableCardAnalytics";
-import { NavLink, useHistory } from "react-router-dom";
-import { getPowerBiAccess } from "./services/dataModelsService";
+import { NavLink } from "react-router-dom";
 import configConstants from "../../config/constants";
-import Iframe from "react-iframe";
-import { PowerBIEmbed } from "powerbi-client-react";
-import { models } from "powerbi-client";
 import { getProducts } from "../products/services/productService";
 
-const BuildModel = ({
-  configData,
-  userData,
-  setUserModelBuilds,
-  setCurrentActiveModel,
-  resetModelBuild,
-  selectedModelTypeData,
-  location,
-}) => {
-  const { UserID } = userData;
-  const history = useHistory();
+const BuildModel = ({}) => {
   const [selectedModelCard, setSelectedModelCard] = useState(null);
-  const [modalStatus, setModalStatus] = useState(false);
-  const [modalStatusError, setModalStatusError] = useState(null);
-  const [tabeleData, setTableData] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [ifUrlOpen, setIfUrlOpen] = useState(false);
-  const [ifActiveUrl, setIfActiveUrl] = useState("");
-  const [searchValue, setSearchValue] = useState("");
-  const [searchList, setSearchList] = useState([]);
-  const [generatedPowerBiToken, setGeneratedPowerBiToken] = useState(null);
-  const [tokenStatus, setTokenStatus] = useState(false);
-  const [selectedModel, setSelectedModel] = useState({});
-  const [isFromIframe, setIsFromIframe] = useState(false);
   const [mapList, setMapList] = useState([]);
   const [mapFiltered, setMapFiltered] = useState([]);
-
-  const mockData = [{ name: "A", location: "B", price: 80, qty: 5 }];
 
   useEffect(() => {
     onInitDataInPage();
   }, []);
 
   const onInitDataInPage = async () => {
+    const user = JSON.parse(sessionStorage.getItem("userData"));
     let data = {
-      userId: 1,
+      userId: user.user_row_id,
     };
     const productResults = await getProducts(data);
     setMapList(productResults && productResults.data.body);

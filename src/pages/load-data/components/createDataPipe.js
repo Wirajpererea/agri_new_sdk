@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import {
-  Radio,
   Row,
   Col,
   Select,
@@ -13,12 +12,9 @@ import {
 } from "antd";
 import "./createDataPipe.scss";
 import { useEffect } from "react";
-import { MessageAlert } from "../../../components";
 import {createNewPipeline} from "../services/loadData-service";
-import { color } from "d3";
 
 const FormItem = Form.Item;
-const { Option } = Select;
 
 const CreateDataPipe = ({
   goNextStage,
@@ -28,19 +24,15 @@ const CreateDataPipe = ({
   selectedPipeline,
   createPipelineData,
   userData,
-  pipelineCreatePending,
   pipelineCreateSuccess,
-  pipelineCreateError,
   exportPipelineData,
   exportDataFileUrl,
   exportPiplineStatus,
   resetExportPipeline,
   toggleSelectPipelineView
 }) => {
-  const [activeImportButton, setActiveImportButton] = useState(false);
   const [activeExportButton, setActiveExportButton] = useState(false);
   const [activeNextButton, setActiveNextButton] = useState(false);
-  const [activeDownloadButton, setActiveDownloadButton] = useState(false);
   const [radioBtnIE, setRadioBtnIE] = useState(1);
   const [newPipelineStatus, setNewPipelineStatus] = useState("");
 

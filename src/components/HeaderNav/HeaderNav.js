@@ -1,8 +1,6 @@
 import React from "react";
 import { Layout } from "antd";
-// import { SearchOutlined } from "@ant-design/icons";
 import "./HeaderNav.scss";
-// import HelpIcon from "../../assets/icons/help.png";
 import LogoutIcon from "../../assets/icons/log-out.png";
 import { logOutAction } from "../../pages/login/actions/login-action";
 import { connect } from "react-redux";
@@ -21,23 +19,16 @@ const HeaderNav = ({ logout }) => {
     <React.Fragment>
       <Header className="nav-header">
         <div className="nav-header-content">
-          <div className="logo">
-            <span className="name">Ease Agri</span>
+          <div className="">
+            <span
+              className="name"
+              style={{ fontWeight: "bolder", fontSize: "24px" }}
+            >
+              Ease Agri
+            </span>
           </div>
           <div className="right-side">
             <ul className="nav navbar-nav navbar-right">
-              {/* <li className="search">
-                <Input
-                  size="medium"
-                  className="header-search-fields"
-                  placeholder="Search"
-                  prefix={<SearchOutlined />}
-                />
-              </li>
-              <li className="help">
-                <img src={HelpIcon} alt="" />
-                Help
-              </li> */}
               <li className="logout" onClick={() => userLogOut()}>
                 <img src={LogoutIcon} alt="" />
                 Log Out

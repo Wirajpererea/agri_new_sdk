@@ -1,13 +1,10 @@
 import React, { useState, useEffect } from "react";
 import {
   Form,
-  Input,
   Button,
   Row,
   Col,
   Select,
-  Table,
-  Alert,
   notification,
 } from "antd";
 import { connect } from "react-redux";
@@ -17,7 +14,7 @@ import {
   updateUserDataAction,
   resetUserDataAction,
 } from "../login/actions/login-action";
-import { addOrder, addTransportOrder, getTransporters } from "./services/orderService";
+import { addTransportOrder, getTransporters } from "./services/orderService";
 import { useLocation } from "react-router-dom";
 
 const FormItem = Form.Item;
@@ -25,7 +22,6 @@ const FormItem = Form.Item;
 const AddTransport = () => {
   let location = useLocation();
   const [selectedTransporter, setSelectedTransporter] = useState();
-  const [requestedQty, setRequestedQty] = useState(0);
   const [transporters, setTransporters] = useState(0);
 
   useEffect(() => {
@@ -34,7 +30,6 @@ const AddTransport = () => {
 
   const onInitDataInPage = async () => {
     const transporterss = await getTransporters();
-    console.log("transporters-->",transporterss)
     setTransporters(transporterss?.data.body);
   };
 

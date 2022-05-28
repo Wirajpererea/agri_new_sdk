@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Form, Input, Button, Row, Col } from "antd";
 import { connect } from "react-redux";
 import "./connections.scss";
-import { Card, Status, MessageAlert } from "../../components";
+import { Card, MessageAlert } from "../../components";
 import {
   updateConnectionAction,
   resetConnectionAction,
@@ -30,7 +30,6 @@ const Connections = ({
     SMTPPassword,
   } = connectionDetails;
   const [activeButton, setActiveButton] = useState(false);
-  const [statusButton, setStatusButton] = useState(false);
 
   const [server, setServer] = useState(DatabaseServerName);
   const [db, setDb] = useState(DatabaseName);
@@ -40,10 +39,7 @@ const Connections = ({
   const [smtpUsername, setSmtpUsername] = useState(SMTPUserName);
   const [smtpPassword, setSmtpPassword] = useState(SMTPPassword);
   const [smtpPort, setSmtpPort] = useState(SMTPPort);
-  const [isPageIsDirty, setIsPageIsDirty] = useState(false);
   //This is message status result as boolean
-  const [statusResult, setStatusResult] = useState(true);
-  const [statusMessageAlert, setStatusMessageAlert] = useState(null);
 
   const initialValues = {
     server: DatabaseServerName,

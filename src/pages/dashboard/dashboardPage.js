@@ -17,8 +17,6 @@ import {
   updateUserDataAction,
   resetUserDataAction,
 } from "../login/actions/login-action";
-import CryptoJS from "crypto-js";
-import UserImgIcon from "../../assets/images/web/signup.jpg";
 import { registerUser } from "./services/dashboardService";
 import moment from "moment";
 
@@ -27,7 +25,6 @@ const { Option } = Select;
 
 const Dashboard = ({
   userData,
-  updateUser,
   userDataUpdateState,
   userDataUpdateStateBody,
   resetUserDataStatus,
@@ -39,7 +36,6 @@ const Dashboard = ({
   const [firstName, setFirstName] = useState(FirstName);
   const [lastName, setLastName] = useState(LastName);
   const [email, setEmail] = useState(Email);
-  const [userStatus, setUserStatus] = useState(Status);
   const [userType, setUserType] = useState();
   const [agreed, setAgreed] = useState(false);
   const [password, setPassword] = useState("");
@@ -383,7 +379,7 @@ const Dashboard = ({
                     />
                     &nbsp;
                     I have read and agreed to{" "}
-                    <a target="_blank" href="https://www.google.com/">
+                    <a target="_blank" href="#">
                       terms and conditions.
                     </a>
                   </Form.Item>

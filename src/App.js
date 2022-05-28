@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { BrowserRouter } from "react-router-dom";
 
-import Login from "./pages/login/login";
 
-import { Route, withRouter } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import AppRoutes from "./App-routes";
 import { Layout } from "antd";
 
