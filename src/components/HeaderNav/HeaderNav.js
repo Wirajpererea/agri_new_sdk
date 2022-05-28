@@ -19,7 +19,7 @@ const HeaderNav = ({ logout }) => {
     <React.Fragment>
       <Header className="nav-header">
         <div className="nav-header-content">
-          <div className="">
+          <div className="logo">
             <span
               className="name"
               style={{ fontWeight: "bolder", fontSize: "24px" }}
