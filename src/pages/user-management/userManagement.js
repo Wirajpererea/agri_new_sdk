@@ -9,7 +9,6 @@ import {
   updateUserDataAction,
   resetUserDataAction,
 } from "../login/actions/login-action";
-import CryptoJS from "crypto-js";
 
 const FormItem = Form.Item;
 
@@ -104,9 +103,9 @@ const UserManagement = ({
         Email:data.email,
         UserStatus : userStatus
       }
-      var ciphertext = CryptoJS.AES.encrypt(JSON.stringify(updatedvalues), 'my-secret-key@123').toString();
+      // var ciphertext = CryptoJS.AES.encrypt(JSON.stringify(updatedvalues), 'my-secret-key@123').toString();
       let userdetailsNeeded = {
-        userdetails:ciphertext,
+        userdetails:'',
         UserID: UserID 
       }
 

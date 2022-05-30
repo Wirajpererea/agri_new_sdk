@@ -37,7 +37,6 @@ import {
   getUserRoleByUserId,
   getGroupApi,
 } from "./services/services";
-import CryptoJS from "crypto-js";
 const { Option } = Select;
 const mockData = [
   { key: 1, title: "User Management", value: "um", userId: 2 },
@@ -651,7 +650,7 @@ const UserManagementBatch = ({
             <Row>
               <Col span={12}>
                 <Button
-                  onClick={() => save()}
+                  // onClick={() => save()}
                   style={{
                     marginRight: 8,
                   }}
@@ -669,7 +668,7 @@ const UserManagementBatch = ({
             <Row>
               <Col span={12}>
                 <Button
-                  onClick={() => save()}
+                  // onClick={() => save()}
                   style={{
                     marginRight: 8,
                   }}
@@ -753,73 +752,73 @@ const UserManagementBatch = ({
     return isValid;
   };
 
-  const handleNewUserDataSubmit = async (data) => {
-    try {
-      let isValid = saveValidations(data);
-      if (isValid) {
-        var ciphertext = CryptoJS.AES.encrypt(
-          JSON.stringify(data),
-          "my-secret-key@123"
-        ).toString();
-        let userdetailsNeeded = {
-          userdetails: ciphertext,
-        };
-        setUserSaveInProgress(true);
-        const newUserSaveResponse = await createUserApi(userdetailsNeeded);
+  // const handleNewUserDataSubmit = async (data) => {
+  //   try {
+  //     let isValid = saveValidations(data);
+  //     if (isValid) {
+  //       var ciphertext = CryptoJS.AES.encrypt(
+  //         JSON.stringify(data),
+  //         "my-secret-key@123"
+  //       ).toString();
+  //       let userdetailsNeeded = {
+  //         userdetails: ciphertext,
+  //       };
+  //       setUserSaveInProgress(true);
+  //       const newUserSaveResponse = await createUserApi(userdetailsNeeded);
           
 
-        setUserSaveInProgress(false);
-        if (newUserSaveResponse.data.message == "success") {
-          displayNotification(
-            "success",
-            "New user details saved successfully!"
-          );
-          setNewUserDataState(false);
-          loadUsers();
-        } else {
-          displayNotification("error", "New user details saving failed!");
-        }
-        setTargetKeys([]);
-        setNewAddUser(false);
-        setEditData(null);
-      } else {
-        displayNotification("error", "Please fill out the required fields!");
-      }
-    } catch (error) {
-      displayNotification("error", "New user details saving failed!");
-    }
-  };
+  //       setUserSaveInProgress(false);
+  //       if (newUserSaveResponse.data.message == "success") {
+  //         displayNotification(
+  //           "success",
+  //           "New user details saved successfully!"
+  //         );
+  //         setNewUserDataState(false);
+  //         loadUsers();
+  //       } else {
+  //         displayNotification("error", "New user details saving failed!");
+  //       }
+  //       setTargetKeys([]);
+  //       setNewAddUser(false);
+  //       setEditData(null);
+  //     } else {
+  //       displayNotification("error", "Please fill out the required fields!");
+  //     }
+  //   } catch (error) {
+  //     displayNotification("error", "New user details saving failed!");
+  //   }
+  // };
 
-  const save = async () => {
-    try {
-      if (newAddUser && editData != null) {
-        await handleNewUserDataSubmit(editData);
-      } else {
-        const data = editData;
-        var ciphertextedit = CryptoJS.AES.encrypt(
-          JSON.stringify(data),
-          "my-secret-key@123"
-        ).toString();
-        let usereditdetailsNeeded = {
-          userdetails: ciphertextedit,
-        };
-        setUserIdEditActionInProgress(editingUserDataState.UserID);
-        const updateResponse = await updateUserApi({
-          ...usereditdetailsNeeded,
-          UserID: editData.UserID,
-        });
-        setUserIdEditActionInProgress(false);
-        if (updateResponse.data.message == "success") {
-          displayNotification("success", "User details updated successfully!");
-          setEditingUserDataState(false);
-          loadUsers();
-        } else {
-          displayNotification("error", "User details update failed!");
-        }
-        setEditData(null);
-      }
-    } catch (errInfo) {}
-  };
+  // const save = async () => {
+  //   try {
+  //     if (newAddUser && editData != null) {
+  //       await handleNewUserDataSubmit(editData);
+  //     } else {
+  //       const data = editData;
+  //       var ciphertextedit = CryptoJS.AES.encrypt(
+  //         JSON.stringify(data),
+  //         "my-secret-key@123"
+  //       ).toString();
+  //       let usereditdetailsNeeded = {
+  //         userdetails: ciphertextedit,
+  //       };
+  //       setUserIdEditActionInProgress(editingUserDataState.UserID);
+  //       const updateResponse = await updateUserApi({
+  //         ...usereditdetailsNeeded,
+  //         UserID: editData.UserID,
+  //       });
+  //       setUserIdEditActionInProgress(false);
+  //       if (updateResponse.data.message == "success") {
+  //         displayNotification("success", "User details updated successfully!");
+  //         setEditingUserDataState(false);
+  //         loadUsers();
+  //       } else {
+  //         displayNotification("error", "User details update failed!");
+  //       }
+  //       setEditData(null);
+  //     }
+  //   } catch (errInfo) {}
+  // };
 
   const handleDeleteExistingUser = async (data) => {
     const { UserID } = data;

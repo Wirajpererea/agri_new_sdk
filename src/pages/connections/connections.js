@@ -7,7 +7,6 @@ import {
   updateConnectionAction,
   resetConnectionAction,
 } from "../login/actions/login-action";
-import CryptoJS from "crypto-js";
 
 const FormItem = Form.Item;
 
@@ -113,9 +112,9 @@ const Connections = ({
 
   const handleConnection = (values) => {
     const { UserID } = userData;
-    var ciphertext = CryptoJS.AES.encrypt(JSON.stringify(values), 'my-secret-key@123').toString();
+    // var ciphertext = CryptoJS.AES.encrypt(JSON.stringify(values), 'my-secret-key@123').toString();
     let userdetailsNeeded = {
-      userdetails:ciphertext
+      userdetails:''
     }
    
     

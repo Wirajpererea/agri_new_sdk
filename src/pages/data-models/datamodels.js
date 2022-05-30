@@ -20,7 +20,7 @@ const BuildModel = ({}) => {
   const onInitDataInPage = async () => {
     const user = JSON.parse(sessionStorage.getItem("userData"));
     let data = {
-      userId: user.user_row_id,
+      userId: user?.user_row_id,
     };
     const productResults = await getProducts(data);
     setMapList(productResults && productResults.data.body);

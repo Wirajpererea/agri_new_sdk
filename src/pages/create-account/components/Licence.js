@@ -7,8 +7,6 @@ import { validateLicenceKey } from "../services/services";
 import { connect } from "react-redux";
 
 import "./licence.scss";
-import CryptoJS from "crypto-js";
-
 
 const FormItem = Form.Item;
 

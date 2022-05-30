@@ -9,7 +9,6 @@ import {
   updateUserDataAction,
   resetUserDataAction,
 } from "../login/actions/login-action";
-import CryptoJS from "crypto-js";
 import { callLoginApi } from "./services/login-service";
 import { useHistory } from "react-router-dom";
 
