@@ -10,7 +10,7 @@ import {
   resetUserDataAction,
 } from "../login/actions/login-action";
 import { callLoginApi } from "./services/login-service";
-import { useHistory } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 
 const FormItem = Form.Item;
 
@@ -92,14 +92,16 @@ const Login = ({
     }
   };
 
-  const handleSubmit = async(data) => {
-   const loginResult = await callLoginApi(data);
-   console.log("loginResult====>",loginResult);
-   if(loginResult.data?.body.status === true)
-   {
-    sessionStorage.setItem("userData", JSON.stringify(loginResult.data?.body.user));
-    history.push("/products");
-   }
+  const handleSubmit = async (data) => {
+    const loginResult = await callLoginApi(data);
+    console.log("loginResult====>", loginResult);
+    if (loginResult.data?.body.status === true) {
+      sessionStorage.setItem(
+        "userData",
+        JSON.stringify(loginResult.data?.body.user)
+      );
+      history.push("/products");
+    }
   };
 
   return (
@@ -136,7 +138,6 @@ const Login = ({
                 <Input
                   className="connection-input block-container-item"
                   type="email"
-             
                 />
               </FormItem>
             </Col>
@@ -188,6 +189,10 @@ const Login = ({
             >
               Save
             </Button>
+            
+            <FormItem style={{marginTop:'20px'}}>
+              New to Ease Agri? <NavLink to="/signup">Signup here</NavLink>
+            </FormItem>
           </FormItem>
         </Form>
       </Card>

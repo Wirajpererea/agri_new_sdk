@@ -379,7 +379,7 @@ const Dashboard = ({
                     />
                     &nbsp;
                     I have read and agreed to{" "}
-                    <a target="_blank" href="#">
+                    <a href="#">
                       terms and conditions.
                     </a>
                   </Form.Item>
