@@ -8,7 +8,7 @@ import {
   Select,
   Table,
   Alert,
-  notification
+  notification,
 } from "antd";
 import { connect } from "react-redux";
 
@@ -56,9 +56,14 @@ const Orders = () => {
               key={location.state.selectedProduct.product_row_id}
             >
               <img
-              src={location.state.selectedProduct.imgUrl}
-              style={{ height: "50px" }}
-            />
+                src={location.state.selectedProduct.imgUrl}
+                style={{
+                  height: "450px",
+                  display: "flex",
+                  margin: "auto",
+                  marginBottom: "15px",
+                }}
+              />
               <Row>
                 <Col span={8}>Name </Col>
                 <Col span={1}>:</Col>
@@ -85,7 +90,7 @@ const Orders = () => {
         <Col span={16}>
           <div>
             <Row>
-              <Col span={2} />
+              {/* <Col span={1} /> */}
               <Col span={18}>
                 <Card
                 // style={{ width: "90%" }}
