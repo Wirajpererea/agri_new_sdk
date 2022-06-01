@@ -44,6 +44,8 @@ const Products = ({
     minLength: true,
   });
 
+  const user = JSON.parse(sessionStorage.getItem("userData"));
+
   const [isEdit, setIsEdit] = useState(false);
   const [editData, setEditData] = useState(null);
 
@@ -156,7 +158,7 @@ const Products = ({
       let updateProductDetails = {
         ...data,
         productId: editData.product_row_id,
-        userId: 1,
+        userId: user?.user_row_id,
       };
       const updateResults = await updateProducts(updateProductDetails);
       if (updateResults.data.message === "success") {
@@ -171,7 +173,7 @@ const Products = ({
     } else {
       let addProductDetails = {
         ...data,
-        userId: 1,
+        userId: user?.user_row_id,
       };
       const formData = new FormData();
       const keys = Object.keys(addProductDetails);
