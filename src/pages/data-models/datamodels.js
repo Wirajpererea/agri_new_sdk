@@ -22,7 +22,7 @@ const BuildModel = ({}) => {
     let data = {
       userId: user?.user_row_id,
     };
-    const productResults = await getProducts(data);
+    const productResults = await getProducts();
     setMapList(productResults && productResults.data.body);
   };
   const onClickHandler = async (cardId, model) => {};
