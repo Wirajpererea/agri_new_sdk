@@ -19,6 +19,7 @@ import {
 } from "../login/actions/login-action";
 import { registerUser } from "./services/dashboardService";
 import moment from "moment";
+import { useHistory } from "react-router-dom";
 
 const FormItem = Form.Item;
 const { Option } = Select;
@@ -29,6 +30,7 @@ const Dashboard = ({
   userDataUpdateStateBody,
   resetUserDataStatus,
 }) => {
+  const history = useHistory();
   const { Email, FirstName, LastName, Status } = userData;
   const [form] = Form.useForm();
   const [activeButton, setActiveButton] = useState(null);
@@ -119,6 +121,10 @@ const Dashboard = ({
     };
     console.log("user==>", user);
     const regUser = await registerUser(user);
+    console.log(regUser,'regUser');
+    if (regUser?.statusText === "OK") {
+      history.push("/");
+    }
     console.log("usregUserer==>", regUser);
   };
   const selectionChange = (val) => {
