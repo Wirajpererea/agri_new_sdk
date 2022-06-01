@@ -97,7 +97,7 @@ const AddTransport = () => {
                 // style={{ width: "90%" }}
                 // customClass="user-management-card page-section"
                 >
-                  <h2 className="title">Place Trnsport Order</h2>
+                  <h2 className="title">Place Transport Order</h2>
                   <form className="connection-form">
                     <Row>
                       <Col span={12}>
