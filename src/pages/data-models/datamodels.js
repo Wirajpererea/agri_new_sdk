@@ -175,25 +175,27 @@ const BuildModel = ({}) => {
                         <Col span={1}>:</Col>
                         <Col>{modelData.price}</Col>
                       </Row>
-                      <Row>
-                        <Col span={12}>
-                          <Button
-                            type="primary"
-                            htmlType="button"
-                            style={{ width: "100%", marginTop: "10px" }}
-                          >
-                            <NavLink
-                              exact
-                              to={{
-                                pathname: "/orders",
-                                state: { selectedProduct: modelData },
-                              }}
+                      {loggedUser?.type === "consumer" && (
+                        <Row>
+                          <Col span={12}>
+                            <Button
+                              type="primary"
+                              htmlType="button"
+                              style={{ width: "100%", marginTop: "10px" }}
                             >
-                              Order
-                            </NavLink>
-                          </Button>
-                        </Col>
-                      </Row>
+                              <NavLink
+                                exact
+                                to={{
+                                  pathname: "/orders",
+                                  state: { selectedProduct: modelData },
+                                }}
+                              >
+                                Order
+                              </NavLink>
+                            </Button>
+                          </Col>
+                        </Row>
+                      )}
                     </ClickableCardAnalytics>
                   </div>
                 );
