@@ -71,7 +71,7 @@ const BuildModel = ({}) => {
                     >
                       <img
                         src={modelData.imgUrl}
-                        style={{ height: "50px" }}
+                        style={{ height: "100px" }}
                       />
                       <Row>
                         <Col span={8}>Name </Col>
