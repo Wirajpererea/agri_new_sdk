@@ -100,15 +100,12 @@ const Login = ({
         "userData",
         JSON.stringify(loginResult.data?.body.user)
       );
-      history.push("/products");
+      history.push("/view");
     }
   };
 
   return (
-    <div>
-      <div>
-        <img src="" />
-      </div>
+    <div className="login-content">
       <Card
         style={{ width: "95%" }}
         customClass="user-management-card page-section"
@@ -187,7 +184,7 @@ const Login = ({
               htmlType="submit"
               className="form-submit-button active"
             >
-              Save
+              Login
             </Button>
             
             <FormItem style={{marginTop:'20px'}}>

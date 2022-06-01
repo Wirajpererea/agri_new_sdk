@@ -14,12 +14,14 @@ body {
   font-style: normal;
   
   .main-container {
+    background-image: url("./assets/images/page_wallpaper.jpeg");
     min-width: 1280px;
     // overflow-x: scroll;
     .ant-layout {
       background-color: #2b314a;
     }
     & .content {
+      background-image: url("./assets/images/page_wallpaper.jpeg");
       background-color: #e5e5e5;
       min-height: calc(100vh - 80px);
       margin-top: 20px;

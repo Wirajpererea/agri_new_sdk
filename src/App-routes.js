@@ -39,8 +39,10 @@ const AppRoutes = ({ collapsed, setCollapsed, loadPipelineSelectionData }) => {
     <React.Fragment>
       <ErrorBoundary>
         <Switch>
-          <Route path="/" exact component={login} />
-          <Route path="/signup" exact component={Dashboard} />
+          {/* <div className="login-content"> */}
+            <Route path="/" exact component={login} />
+            <Route path="/signup" exact component={Dashboard} />
+          {/* </div> */}
           <React.Fragment>
             <HeaderNav
               collapsed={collapsed}

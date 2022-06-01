@@ -38,7 +38,7 @@ const BuildModel = ({}) => {
         <Row>
           <Col style={{ textAlign: "center" }} span={24}>
             <div className="build-model-header-div">
-              <h1 className="build-model-header">Products</h1>
+              <h1 className="build-model-header" style={{fontWeight:'bolder', fontSize:'40px'}}>Products</h1>
             </div>
           </Col>
         </Row>

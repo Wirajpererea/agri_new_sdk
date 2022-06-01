@@ -29,7 +29,7 @@ const SiderComponet = ({ children, collapsed, userData }) => {
           defaultSelectedKeys={["1"]}
         >
           <li className="nav-main-profile">
-            <img alt="" className="profile-img" src={UserImgIcon} />
+            <img alt="" className="profile-img" src={UserImgIcon} style={{marginLeft:'35px'}} />
             {userData.FirstName} {userData.LastName}
           </li>
           <Menu.Item

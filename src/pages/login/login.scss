@@ -1,14 +1,20 @@
+.login-content {
+  background-image: url("https://img.freepik.com/free-photo/recyclable-bag-fresh-vegetables-blue-summer-sky-background_75891-468.jpg?w=996");
+  background-color: #e5e5e5;
+  min-height: calc(100vh);
+}
 .login-page-continer {
+  
   height: auto;
   min-width: 1331px;
   & .details-warp {
-    // background-image: url("../../assets/images/common/login-wrapper-02.png");
     width: 66.5%;
     height: 100vh;
     display: inline-block;
     // background-color: white;
     // vertical-align: center;
     & .wrapper-img {
+      
       width: 100%;
       height: auto;
       object-fit: cover;
@@ -16,6 +22,7 @@
   }
 
   & .login-warp {
+    
     width: 33.5%;
     display: inline-block;
     background-color: #2b314a;

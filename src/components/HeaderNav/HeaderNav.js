@@ -22,7 +22,7 @@ const HeaderNav = ({ logout }) => {
           <div className="logo">
             <span
               className="name"
-              style={{ fontWeight: "bolder", fontSize: "24px" }}
+              style={{ fontWeight: "bolder", fontSize: "20px", marginLeft:'90px', width:'100%' }}
             >
               Ease Agri
             </span>

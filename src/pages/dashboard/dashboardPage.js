@@ -128,7 +128,7 @@ const Dashboard = ({
     setAgreed(e.target.checked);
   };
   return (
-    <div>
+    <div className="signup-content">
       <Row>
         <Col span={4} />
         <Col span={16}>
@@ -419,7 +419,7 @@ const Dashboard = ({
                   htmlType="submit"
                   className="form-submit-button active"
                 >
-                  Save
+                  Register
                 </Button>
               </FormItem>
             </Form>
