@@ -8,6 +8,8 @@ import { NavLink } from "react-router-dom";
 import moment from "moment";
 
 const ViewOrders = () => {
+  const user = JSON.parse(sessionStorage.getItem("userData"));
+
   const [orders, setOrders] = useState([]);
   const [tableColumns, setTableColumns] = useState([
     {
@@ -54,15 +56,17 @@ const ViewOrders = () => {
       render: (tableRow) => {
         return tableRow.isTransported != 1 ? (
           <span>
-            <NavLink
-              exact
-              to={{
-                pathname: "/add-transport",
-                state: { selectedOrder: tableRow },
-              }}
-            >
-              Transport
-            </NavLink>
+            {user?.type === "seller" && (
+              <NavLink
+                exact
+                to={{
+                  pathname: "/add-transport",
+                  state: { selectedOrder: tableRow },
+                }}
+              >
+                Transport
+              </NavLink>
+            )}
           </span>
         ) : (
           <p>Transported by {tableRow.transporterName}</p>

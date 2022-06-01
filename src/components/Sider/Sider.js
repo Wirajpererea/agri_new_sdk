@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Layout, Menu } from "antd";
 import { NavLink } from "react-router-dom";
 import { PayCircleOutlined } from "@ant-design/icons";
@@ -9,9 +9,7 @@ import UserImgIcon from "../../assets/icons/user.png";
 const { Sider } = Layout;
 
 const SiderComponet = ({ children, collapsed, userData }) => {
-  const [menuList, setMenuList] = useState([0]);
-
-  useEffect(() => {}, [menuList]);
+  const user = JSON.parse(sessionStorage.getItem("userData"));
 
   return (
     <Layout className="data-view-with-sider">
@@ -29,7 +27,12 @@ const SiderComponet = ({ children, collapsed, userData }) => {
           defaultSelectedKeys={["1"]}
         >
           <li className="nav-main-profile">
-            <img alt="" className="profile-img" src={UserImgIcon} style={{marginLeft:'35px'}} />
+            <img
+              alt=""
+              className="profile-img"
+              src={UserImgIcon}
+              style={{ marginLeft: "35px" }}
+            />
             {userData.FirstName} {userData.LastName}
           </li>
           <Menu.Item
@@ -41,15 +44,17 @@ const SiderComponet = ({ children, collapsed, userData }) => {
               My Profile
             </NavLink>
           </Menu.Item>
-          <Menu.Item
-            className="menu-item"
-            key="products"
-            icon={<PayCircleOutlined />}
-          >
-            <NavLink exact to={"/products"}>
-              Add Products
-            </NavLink>
-          </Menu.Item>
+          {user?.type === "seller" && (
+            <Menu.Item
+              className="menu-item"
+              key="products"
+              icon={<PayCircleOutlined />}
+            >
+              <NavLink exact to={"/products"}>
+                Add Products
+              </NavLink>
+            </Menu.Item>
+          )}
           <Menu.Item
             className="menu-item"
             key="products"
