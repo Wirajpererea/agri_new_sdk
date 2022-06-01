@@ -55,10 +55,10 @@ const Orders = () => {
               id=""
               key={location.state.selectedProduct.product_row_id}
             >
-              {/* <img
-              src={`${configConstants.apiUrlWithPort}/api/v1/ETL_knowledgebase/getAnalyticImage/${modelData.thumbnail_name}.png`}
+              <img
+              src={location.state.selectedProduct.imgUrl}
               style={{ height: "50px" }}
-            /> */}
+            />
               <Row>
                 <Col span={8}>Name </Col>
                 <Col span={1}>:</Col>

@@ -70,7 +70,7 @@ const BuildModel = ({}) => {
                       disabled={false}
                     >
                       <img
-                        src={`${configConstants.apiUrlWithPort}/api/v1/ETL_knowledgebase/getAnalyticImage/${modelData.thumbnail_name}.png`}
+                        src={modelData.imgUrl}
                         style={{ height: "50px" }}
                       />
                       <Row>
@@ -132,8 +132,8 @@ const BuildModel = ({}) => {
                       disabled={false}
                     >
                       <img
-                        src={`${configConstants.apiUrlWithPort}/api/v1/ETL_knowledgebase/getAnalyticImage/${modelData.thumbnail_name}.png`}
-                        style={{ height: "50px" }}
+                        src={modelData.imgUrl}
+                        style={{ height: "100px" }}
                       />
                       <Row>
                         <Col span={8}>Name </Col>
