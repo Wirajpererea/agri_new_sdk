@@ -61,7 +61,7 @@ const BuildModel = ({}) => {
                     <ClickableCardAnalytics
                       style={{
                         backgroundPosition: "center",
-                        padding: "0px",
+                        padding: "10px",
                       }}
                       onClickHandler={() => {
                         onClickHandler(index, modelData);
@@ -71,7 +71,12 @@ const BuildModel = ({}) => {
                     >
                       <img
                         src={modelData.imgUrl}
-                        style={{ height: "100px" }}
+                        style={{
+                          height: "170px",
+                          display: "flex",
+                          margin: "auto",
+                          marginBottom: "15px",
+                        }}
                       />
                       <Row>
                         <Col span={8}>Name </Col>
@@ -98,7 +103,7 @@ const BuildModel = ({}) => {
                           <Button
                             type="primary"
                             htmlType="button"
-                            style={{ width: "100%" }}
+                            style={{ width: "100%", marginTop: "10px" }}
                           >
                             <NavLink
                               exact
@@ -123,7 +128,7 @@ const BuildModel = ({}) => {
                     <ClickableCardAnalytics
                       style={{
                         backgroundPosition: "center",
-                        padding: "0px",
+                        padding: "10px",
                       }}
                       onClickHandler={() => {
                         onClickHandler(index, modelData);
@@ -133,7 +138,12 @@ const BuildModel = ({}) => {
                     >
                       <img
                         src={modelData.imgUrl}
-                        style={{ height: "100px" }}
+                        style={{
+                          height: "170px",
+                          display: "flex",
+                          margin: "auto",
+                          marginBottom: "15px",
+                        }}
                       />
                       <Row>
                         <Col span={8}>Name </Col>
@@ -160,7 +170,7 @@ const BuildModel = ({}) => {
                           <Button
                             type="primary"
                             htmlType="button"
-                            style={{ width: "100%" }}
+                            style={{ width: "100%", marginTop: "10px" }}
                           >
                             <NavLink
                               exact
