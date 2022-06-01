@@ -13,7 +13,7 @@ const HeaderNav = ({ logout }) => {
   const userLogOut = () => {
     sessionStorage.removeItem("token");
     logout();
-    history.push("/login");
+    history.push("/");
   };
   return (
     <React.Fragment>
